@@ -1,0 +1,205 @@
+.block {    
+    width: 282px;
+    height: 405px;
+    border-radius: 2px;
+    padding: 24px 30px 30px;
+    border-top: 6px solid $secondary-color;
+    box-shadow: 0px 4px 11px rgba(0, 0, 0, .06);
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 20px;
+    position: relative;
+    background: #fff;
+    font-family: $main-font-family;
+    box-sizing: border-box;    
+    &:nth-of-type(2), &:nth-of-type(4) {
+        background: $secondary-color;
+        box-shadow: 0px 22px 37px rgba(0, 0, 0, 0.2);
+        color: $card-type2-color;
+    }
+    h3 {
+        font-size: 16px;
+        line-height: 22px;
+        font-weight: bold;
+        width: 172px;
+        max-height: 66px;
+        margin: 0 0 20px 0;
+    }
+    &__logo {
+        object-fit: cover;
+        object-position: center;
+        position: absolute;
+    }
+    &:nth-of-type(1) &__logo {
+        width: 131.01px;
+        height: 34.5px;        
+        top: 30px;
+        right: 29.99px;
+    }
+    &:nth-of-type(2) &__logo, &:nth-of-type(4) &__logo {
+        width: 30px;
+        height: 30px;
+        top: 20px;
+        right: 20px;
+        object-fit: contain;
+    }
+    &:nth-of-type(3) &__logo {
+        width: 195.36px;
+        height: 33.5px;        
+        top: 24px;
+        right: 29.64px;
+    }
+    &:nth-of-type(5) &__logo {
+        width: 85.34px;
+        height: 34.5px;        
+        top: 30px;
+        right: 29.66px;
+    }
+    &:nth-of-type(6) &__logo {
+        width: 168.31px;
+        height: 34.5px;        
+        top: 30px;
+        right: 29.69px;
+    }
+    &[data-attr="1"] {
+        color: $main-color;
+        &:hover button {
+            color: $secondary-color;
+            background: #fff;
+        }        
+        &:hover {
+            color: #fff;
+            background-color: $secondary-color;
+            cursor: pointer;
+        }
+        &:hover p {
+            color: #fff;
+        }
+        &:hover .icon1 {
+            filter: invert(100%);            
+        }
+        &:hover .icon1::after {                        
+            color: #000;
+        }
+        &:hover .icon2 {            
+            filter: invert(100%);
+        }
+        &:hover .icon2::after {
+            color: #000;
+        }
+        p {
+            text-transform: uppercase;
+            font-size: 13px;
+            line-height: 20px;
+            color: $secondary-color;
+            margin: 58.5px 0 0 0;
+        }
+        h3 {
+            font-size: 20px;
+            line-height: 30px;            
+            color: inherit;
+            margin: 10px 0 0;
+            width: 100%;
+        }
+        .icon1 {
+            margin: 73.8px 0 0 1px;
+            width: 18px;
+            height: 18px;
+            background-image: url(./img/icon1.svg);
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            &::after {
+                content: 'Postgraduate';
+                display: inline-block;
+                font-size: 14px;
+                line-height: 16.1px;
+                color: inherit;
+                position: absolute;
+                left: calc(100% + 11px);                
+            }
+        }
+        .icon2 {
+            margin: 9.3px 0 0 1px;
+            width: 18px;
+            height: 18px;
+            background-image: url(./img/icon2.svg);
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            &::after {
+                content: 'Every 12 weeks';
+                display: inline-block;
+                font-size: 14px;
+                line-height: 16.1px;
+                color: inherit;
+                position: absolute;
+                left: calc(100% + 11px);                
+                width: 120px;                
+            }            
+        }       
+        &:nth-of-type(6) .icon2::after {
+            content: 'January, April, July, October, November';
+            width: 200px;
+        }
+    }
+    &[data-attr="2"] {
+        color: $card-type2-color;
+        p {
+            font-size: 14px;
+            line-height: 22px;
+            color: inherit;
+            margin: 0;
+            font-weight: normal;
+        }        
+        p:nth-of-type(1), p:nth-of-type(4) {            
+            font-weight: bold;
+        }
+        p:nth-of-type(4) {
+            margin-top: 20px;
+        }
+        h2 {
+            color: inherit;
+            font-size: 32px;
+            font-family: $main-font-family;
+            margin: 31px 0 0 0;
+        }
+        button {
+            background: rgba(255,255,255,.25);
+            color: inherit;
+        }
+        &:hover {
+            cursor: pointer;
+        }
+        &:hover button {
+            background: $card-type2-color;
+            color: $secondary-color;
+        }
+        .block__logo {
+            transform: rotate(45deg);
+            transition: .3s ease-in transform;            
+        }
+        &:hover .block__logo {
+            filter: opacity(.5);
+            transform: rotate(0deg);
+        }
+    }   
+    button {
+        width: 222px;
+        height: 44px;
+        position: absolute;
+        bottom: 30px;
+        outline: none !important;
+        border: none;
+        background: $secondary-color;
+        border-radius: 3px;
+        font-size: 14px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $card-type2-color;
+        &:hover {
+            cursor: pointer;
+        }
+    }         
+}

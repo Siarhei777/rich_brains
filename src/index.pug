@@ -1,0 +1,16 @@
+include ./components/_data_cards.pug
+include ./components/_cards.pug
+doctype html
+html(lang="en")
+    include ./components/_header.pug
+    body
+        .container
+            h2 Find Your Course
+            include ./components/_navigation.pug
+            .all__courses
+                each name, index in (data)
+                    +card(name, index)
+                a(href="#") more programmes
+
+    
+    

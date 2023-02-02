@@ -1,0 +1,20 @@
+aside.navigation
+    .navigation__header
+        h3.navigation__header_text careers    
+    input(type="checkbox" id="list_item2_checkbox").list_control
+    ul.navigation__menu
+        each name, index in ['Business & Management', 'Computing & IT','Fashion & Media', 'Finance & Accounting','Law & Criminology','Marketing & Communications','Psychology & Social Sciences']
+            if index == 6
+                li.navigation__menu_item(id="rotated")
+                    label(for="list_item2_checkbox")=name
+                    ul.invisible(id="inner_list2")
+                        each inner_name, index in ['Market Research Executive', 'Child Psychologist','Guidance Counsellor','Behaviour Analyst','Recreational Therapist']
+                            li
+                                input(type="radio" id=`inner_item${index}` name="inner_list_item")
+                                label(for=`inner_item${index}`)=inner_name
+                                
+            else 
+                li.navigation__menu_item
+                    label=name
+    .navigation__footer
+        button.navigation__footer_accept show all programmes
