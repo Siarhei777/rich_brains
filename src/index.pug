@@ -6,6 +6,7 @@ html(lang="en")
     body
         .container
             h2 Find Your Course
+            include ./components/_mobile_navigation.pug
             include ./components/_navigation.pug
             .all__courses
                 each name, index in (data)

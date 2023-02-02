@@ -12,8 +12,8 @@
         padding-bottom: 28px;
         &_text {
             margin: 0 0 0 35px;
-            font-family: $main-font-family;
-            font-size: 13px;
+            font-family: $main-font-family;            
+            @include fluid-type($min-font-size: 7.45px, $max-font-size: 13px, $lower-range: 768px, $upper-range: 1440px);
             line-height: 20px;
             text-transform: uppercase;
             color: $secondary-color;
@@ -37,6 +37,7 @@
         &_item {                 
             font-family: $main-font-family;
             font-size: 16px;
+            @include fluid-type($min-font-size: 8.53px, $max-font-size: 16px, $lower-range: 768px, $upper-range: 1440px);
             line-height: 22px;
             margin-bottom: 12px;
             font-weight: 700;     
@@ -45,8 +46,8 @@
                 width: 100%;
                 display: block;
                 padding: 5px;
-                font-family: $main-font-family;
-                font-size: 16px;
+                font-family: $main-font-family;                
+                @include fluid-type($min-font-size: 8.53px, $max-font-size: 16px, $lower-range: 768px, $upper-range: 1440px);
                 line-height: 22px;
                 font-weight: 700;
                 color: $main-color;
@@ -72,8 +73,7 @@
                 transform-origin: center center;
             }            
         }
-    }
-        
+    }        
     .list_control {
         display: none;
     }
@@ -108,7 +108,8 @@
             display: block;
             padding: 12px 7px 12px 13px;            
             font-family: $main-font-family;
-            font-size: 16px;
+            /* font-size: 16px; */
+            @include fluid-type($min-font-size: 8.53px, $max-font-size: 16px, $lower-range: 768px, $upper-range: 1440px);
             line-height: 22px;
             font-weight: normal;
             color: $main-color;
@@ -139,13 +140,76 @@
             background: transparent;
             font-family: $main-font-family;
             color: $secondary-color;
-            font-weight: 700;
-            font-size: 14px;
+            font-weight: 700;            
+            @include fluid-type($min-font-size: 7.45px, $max-font-size: 14px, $lower-range: 768px, $upper-range: 1440px);
             line-height: 16.1px;
             text-transform: uppercase;
             &:hover {
                 cursor: pointer;
             }
         }
+    }
+}
+@media (max-width: 1440px) {
+    .navigation {            
+        padding: 2.43vw 1.04vw 2.01vw;        
+        box-shadow: 0px 0.278vw 0.76vw rgba(0, 0, 0, 0.06);        
+        &__header {            
+            padding-bottom: 1.94vw;
+            &_text {
+                margin: 0 0 0 2.43vw;                            
+                line-height: 1.39vw;
+            }
+            &_text::before {                
+                width: 1.25vw;
+                height: 1.04vw;                
+                left: -1.74vw;            
+            }
+        }
+        &__menu {            
+            width: 15.49vw;
+            height: 23.75vw;                
+            &_item {                                 
+                margin-bottom: 0.83vw;                
+                line-height: 1.53vw;
+                &>label {                    
+                    padding: 0.347vw;                    
+                    line-height: 1.53vw;
+                }                
+                &::after {
+                    content: url(./img/arrow_right.svg);
+                    height: 1.39vw;
+                    width: 1.39vw;                    
+                    top: 0.347vw;
+                    right: -1.042vw;                    
+                }            
+            }
+        }                                       
+        #list_item2_checkbox:checked + .navigation__menu #inner_list2 {
+            max-height: 20.83vw;
+        }                        
+        .invisible {            
+            width: 16.875vw;            
+        }        
+        .invisible li {                    
+            label {                
+                padding: 0.83vw 0.49vw 0.83vw 0.902vw;                                
+                line-height: 1.53vw;
+            }            
+        }
+        &__footer {            
+            bottom: 2.014vw;
+            width: 17.78vw;
+            height: 4.44vw;            
+            &_accept {                
+                height: 3.056vw;              
+                line-height: 1.12vw;  
+            }
+        }
+    }    
+}
+@media (max-width: 768px) {
+    .navigation {
+        display: none;
     }
 }

@@ -1,6 +1,6 @@
 .block {    
-    width: 282px;
-    height: 405px;
+    width: 100%;
+    height: 100%;
     border-radius: 2px;
     padding: 24px 30px 30px;
     border-top: 6px solid $secondary-color;
@@ -17,8 +17,8 @@
         box-shadow: 0px 22px 37px rgba(0, 0, 0, 0.2);
         color: $card-type2-color;
     }
-    h3 {
-        font-size: 16px;
+    h3 {        
+        @include fluid-type($min-font-size: 8.53px, $max-font-size: 16px, $lower-range: 768px, $upper-range: 1440px);
         line-height: 22px;
         font-weight: bold;
         width: 172px;
@@ -89,14 +89,14 @@
         }
         p {
             text-transform: uppercase;
-            font-size: 13px;
+            @include fluid-type($min-font-size: 6.93px, $max-font-size: 13px, $lower-range: 768px, $upper-range: 1440px);
             line-height: 20px;
             color: $secondary-color;
             margin: 58.5px 0 0 0;
         }
-        h3 {
-            font-size: 20px;
-            line-height: 30px;            
+        h3 {            
+            @include fluid-type($min-font-size: 10.67px, $max-font-size: 20px, $lower-range: 768px, $upper-range: 1440px);            
+            line-height: 30px;
             color: inherit;
             margin: 10px 0 0;
             width: 100%;
@@ -111,8 +111,8 @@
             position: relative;
             &::after {
                 content: 'Postgraduate';
-                display: inline-block;
-                font-size: 14px;
+                display: inline-block;                
+                @include fluid-type($min-font-size: 7.47px, $max-font-size: 14px, $lower-range: 768px, $upper-range: 1440px);            
                 line-height: 16.1px;
                 color: inherit;
                 position: absolute;
@@ -129,8 +129,8 @@
             position: relative;
             &::after {
                 content: 'Every 12 weeks';
-                display: inline-block;
-                font-size: 14px;
+                display: inline-block;                
+                @include fluid-type($min-font-size: 7.45px, $max-font-size: 14px, $lower-range: 768px, $upper-range: 1440px);
                 line-height: 16.1px;
                 color: inherit;
                 position: absolute;
@@ -145,8 +145,8 @@
     }
     &[data-attr="2"] {
         color: $card-type2-color;
-        p {
-            font-size: 14px;
+        p {            
+            @include fluid-type($min-font-size: 7.45px, $max-font-size: 14px, $lower-range: 768px, $upper-range: 1440px);
             line-height: 22px;
             color: inherit;
             margin: 0;
@@ -159,10 +159,10 @@
             margin-top: 20px;
         }
         h2 {
-            color: inherit;
-            font-size: 32px;
+            color: inherit;            
+            @include fluid-type($min-font-size: 17.06px, $max-font-size: 32px, $lower-range: 768px, $upper-range: 1440px);
             font-family: $main-font-family;
-            margin: 31px 0 0 0;
+            margin: 31px 0 0 0;            
         }
         button {
             background: rgba(255,255,255,.25);
@@ -184,6 +184,9 @@
             transform: rotate(0deg);
         }
     }   
+    &[data-attr="3"] {
+        display: none;
+    }        
     button {
         width: 222px;
         height: 44px;
@@ -193,7 +196,8 @@
         border: none;
         background: $secondary-color;
         border-radius: 3px;
-        font-size: 14px;
+        text-transform: uppercase;
+        @include fluid-type($min-font-size: 7.45px, $max-font-size: 14px, $lower-range: 768px, $upper-range: 1440px);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -202,4 +206,191 @@
             cursor: pointer;
         }
     }         
+}
+@media (max-width: 1440px) {
+    .block {    
+        width: 19.58vw;
+        height: 28.125vw;        
+        padding: 1.667vw 2.083vw 2.083vw;
+        border-top: 0.42vw solid $secondary-color;
+        box-shadow: 0px 0.28vw 0.76vw rgba(0, 0, 0, .06);        
+        margin-bottom: 1.39vw;        
+        &:nth-of-type(2), &:nth-of-type(4) {            
+            box-shadow: 0px 1.53vw 2.57vw rgba(0, 0, 0, 0.2);            
+        }
+        h3 {            
+            width: 11.94vw;
+            max-height: 4.58vw;
+            line-height: 1.53vw;
+            margin: 0 0 1.39vw 0;
+        }        
+        &:nth-of-type(1) &__logo {
+            width: 9.098vw;
+            height: 2.396vw;
+            top: 2.083vw;
+            right: 1.597vw;
+        }
+        &:nth-of-type(2) &__logo, &:nth-of-type(4) &__logo {
+            width: 2.08vw;
+            height: 2.083vw;
+            top: 1.39vw;
+            right: 1.39vw;            
+        }
+        &:nth-of-type(3) &__logo {
+            width: 13.57vw;
+            height: 2.33vw;        
+            top: 1.67vw;
+            right: 2.058vw;
+        }
+        &:nth-of-type(5) &__logo {
+            width: 5.93vw;
+            height: 2.4vw;
+            top: 2.083vw;
+            right: 2.06vw;
+        }
+        &:nth-of-type(6) &__logo {
+            width: 11.69vw;
+            height: 2.4vw;        
+            top: 2.08vw;
+            right: 2.062vw;
+        }
+        &[data-attr="1"] {                                    
+            p {                                
+                margin: 4.06vw 0 0 0;
+                line-height: 1.39vw;
+            }
+            h3 {                
+                margin: 0.69vw 0 0;                
+                line-height: 2.083vw;
+            }
+            .icon1 {
+                margin: 5.125vw 0 0 1px;
+                width: 1.25vw;
+                height: 1.25vw;                
+                &::after {                    
+                    left: calc(100% + 0.76vw);
+                    line-height: 1.12vw;
+                }
+            }
+            .icon2 {
+                margin: 0.65vw 0 0 1px;
+                width: 1.25vw;
+                height: 1.25vw;                
+                &::after {                    
+                    left: calc(100% + 0.76vw);
+                    width: 8.33vw;
+                    line-height: 1.12vw;
+                }            
+            }       
+            &:nth-of-type(6) .icon2::after {                
+                width: 13.89vw;
+            }
+        }
+        &[data-attr="2"] {    
+            p {
+                line-height: 1.53vw;
+            }                                
+            p:nth-of-type(4) {
+                margin-top: 1.39vw;                
+            }
+            h2 {                
+                margin: 2.15vw 0 0 0;
+            }                                    
+        }   
+        button {
+            width: 15.42vw;
+            height: 3.06vw;            
+            bottom: 2.08vw;            
+        }         
+    }    
+}
+@media (max-width: 768px) {
+    .block {
+        &[data-attr="1"],  &[data-attr="2"] {
+            display: none;
+        }        
+        &[data-attr="3"] {
+            display: block;
+            width: 330px;            
+            height: 330px;
+            margin: 20px auto 0;         
+            padding: 15px 14.99px 20px 24px;
+            border-top-width: 6px;
+            box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+            border-radius: 2px;
+            .small__image {
+                width: 30px;
+                height: 30px;
+                background-image: url(./img/logo3_mobile.svg);
+                background-size: cover;
+                background-position: center;
+                filter: invert(10%) opacity(.75);
+                position: relative;
+                top: 2px;                
+            }
+            p.business {       
+                font-size: 13px;
+                margin: 15px 0 0 0;
+                line-height: 20px;
+                color: $secondary-color;
+            }
+            h3 {
+                font-size: 16px;                
+                margin: 8px 0 0 0; 
+                line-height: 22px;
+                color: $main-color;
+                width: 100%;
+                height: 44px;                
+                max-height: 44px;
+            }
+            span {
+                font-size: 14px;
+                line-height: 16.1px;
+                display: block;
+                margin: 6px 0 0 0;
+                color: $main-color;
+            }
+            p.price {
+                font-size: 16px;
+                line-height: 22px;
+                color: $main-color;
+                margin: 67px 0 0 1px;
+            }
+            button {
+                width: 280px;
+                height: 44px;
+                position: absolute;
+                bottom: 20px;
+                left: 25px;
+                outline: none !important;
+                border: none;
+                background: $secondary-color;
+                border-radius: 3px;
+                font-size: 14px;                
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: $card-type2-color;
+                text-transform: uppercase;
+            }    
+            &:nth-of-type(7) .block__logo {
+                width: 131.01px;
+                height: 34.5px;
+                right: 14.99px;
+            }
+            &:nth-of-type(8) .block__logo {
+                width: 195.36px;
+                height: 34.5px;
+                right: 14.64px;
+            }
+            &:nth-of-type(9) .block__logo {
+                width: 85.34px;
+                height: 34.5px;
+                right: 14.66px;
+            }            
+            &:nth-of-type(9) .small__image{                
+                transform: rotate(-45deg);
+            }
+        }        
+    }        
 }

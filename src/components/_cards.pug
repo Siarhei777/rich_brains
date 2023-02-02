@@ -8,11 +8,17 @@ mixin card(data, num)
             h3 Master of Business Administration (CMI)
             .icon1
             .icon2            
-        else
+        else if data.type == 2
             p Duration:
             p Minimum: 18 months
             p Maximum: 36 months
             p Start Dates:
             p January, April, July, October
-            h2 £8,500
+            h2 #{data.info}
+        else if data.type == 3
+            .small__image 
+            p.business Business & Management
+            h3 Master of Business Administration (CMI)
+            span #{data.title}
+            p.price #{data.info}
         button More info

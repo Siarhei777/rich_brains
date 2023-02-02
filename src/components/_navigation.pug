@@ -8,7 +8,7 @@ aside.navigation
                 li.navigation__menu_item(id="rotated")
                     label(for="list_item2_checkbox")=name
                     ul.invisible(id="inner_list2")
-                        each inner_name, index in ['Market Research Executive', 'Child Psychologist','Guidance Counsellor','Behaviour Analyst','Recreational Therapist']
+                     each inner_name, index in ['Market Research Executive', 'Child Psychologist','Guidance Counsellor','Behaviour Analyst','Recreational Therapist']
                             li
                                 input(type="radio" id=`inner_item${index}` name="inner_list_item")
                                 label(for=`inner_item${index}`)=inner_name

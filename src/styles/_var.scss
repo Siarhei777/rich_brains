@@ -1,25 +1,21 @@
+$main-font-family: Helvetica, sans-serif;
+$secondary-font-family: 'Playfair Display', serif;
+
 $main-background-color: #e5e5e5;
 $container-background-color: #f7f7f7;
 $navigation-background-color: #fff;
-$main-font-family: Helvetica, sans-serif;
-$secondary-font-family: 'Playfair Display', serif;
 $main-color: #3e3e3e;
 $secondary-color: #259609;
 $border-color: #ececec;
 $hovered-background-color :#f2f2f2;
 $opacity-background-color: rgba(37, 150, 9, .15);
 $card-type2-color: #fff;
+$mobile-background-color: #f1f1f1;
+$mobile-color: #000;
 
+@mixin fluid-type($min-font-size: 12px, $max-font-size: 30px, $lower-range: 768px, $upper-range: 1440px) {
 
-
-$mobile: "(max-width: 480px)";
-$tablet: "(max-width: 768px)";
-$big: "(max-width: 1440px)";
-
-
-@mixin fluid-type($min-font-size: 12px, $max-font-size: 21px, $lower-range: 420px, $upper-range: 1900px) {
-
-    font-size: calc(#{$min-font-size} + #{(($max-font-size / ($max-font-size * 0 + 1)) - ($min-font-size / ($min-font-size * 0 + 1)))} * ( (100vw - #{$lower-range}) / #{(($upper-range / ($upper-range * 0 + 1)) - ($lower-range / ($lower-range * 0 + 1)))}));
+    font-size: calc(#{$min-font-size} + #{(($max-font-size / ($max-font-size * 0 + 1)) - ($min-font-size / ($min-font-size * 0 + 1)))} * ( (100vw - #{$lower-range}) / #{(($upper-range / ($upper-range * 0 + 1)) - ($lower-range / (($lower-range * 0) + 1)))}));
     
     @media screen and (max-width: $lower-range) {
       font-size: $min-font-size;
@@ -27,5 +23,4 @@ $big: "(max-width: 1440px)";
     @media screen and (min-width: $upper-range){
       font-size: $max-font-size;
     }
-  }
-  
+}
